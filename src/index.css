@@ -2,9 +2,6 @@
   box-sizing: border-box;
 }
 
-body {
-  padding-top: 230px;
-}
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -71,6 +68,7 @@ button {
   cursor: pointer;
   transition: border-color 0.25s, background-color 0.3s ease;
   align-self: flex-end;
+  color: white;
 }
 
 button:hover {
@@ -96,6 +94,7 @@ button:focus-visible {
   flex-direction: column;
   gap: 40px;
   text-align: center;
+  padding: 5px 10px;
 }
 
 header {
@@ -117,7 +116,7 @@ header > span {
   font-weight: 600;
 }
 
-header > input {
+form > input {
   background-color: white;
   border: 0;
   border-radius: 30px;
@@ -129,7 +128,7 @@ header > input {
   flex-wrap: wrap;
 }
 
-header > input:focus {
+form > input:focus {
   outline: #535bf2;
 }
 
@@ -137,6 +136,7 @@ main > div.university-list {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  margin-top: 230px;
 }
 
 .university-container {
@@ -243,10 +243,29 @@ main > div.university-list {
   header > input {
     width: 300px;
   }
+
+  .university-container {
+    width: 400px;
+  }
 }
 
 @media (max-width: 500px) {
-  header > input {
-    width: 100px;
+  header {
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  form > input {
+    width: 200px;
+  }
+
+  main > div.university-list {
+    margin-top: 250px;
+  }
+
+  .university-container {
+    width: 300px;
   }
 }
