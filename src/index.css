@@ -1,3 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 230px;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -90,6 +98,128 @@ button:focus-visible {
   text-align: center;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 50px;
+  background-color: #646cff;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0px 2px 3px rgba(100, 108, 255, 0.5);
+  color: white;
+}
+
+header > span {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+header > input {
+  background-color: white;
+  border: 0;
+  border-radius: 30px;
+  width: 500px;
+  padding: 5px 10px;
+  font-size: 16px;
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+header > input:focus {
+  outline: #535bf2;
+}
+
+main > div.university-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.university-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 843px;
+  border: 1px solid #ccc;
+  border-radius: 24px;
+  padding: 15px 20px;
+}
+
+.university-container.dark {
+  border: 1px solid #242424;
+}
+
+.university-container > h1, h2, p {
+  margin: 0;
+}
+
+.title-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title-block > h1 {
+  font-size: 22px;
+}
+
+.university-container > h2 {
+  font-size: 15px;
+}
+
+.container-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* затемнение фона */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background-color: white;
+  color: #1c1c1c;
+  padding: 20px;
+  border-radius: 12px;
+  min-width: 300px;
+  max-width: 90%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.button-row {
+  display: flex;
+  gap: 10px;
+  justify-content: end;
+}
+
+.button-row > button {
+  background-color: transparent;
+  color: #646cff;
+}
+
+.modal-brand {
+  font-weight: bold;
+  color: #646cff;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -100,5 +230,23 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+@media (max-width: 1200px) {
+  header > input {
+    width: 500px;
+  }
+}
+
+@media (max-width: 800px) {
+  header > input {
+    width: 300px;
+  }
+}
+
+@media (max-width: 500px) {
+  header > input {
+    width: 100px;
   }
 }
