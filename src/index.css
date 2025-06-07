@@ -26,8 +26,25 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
+  justify-content: center;
+  align-items: center;
   min-width: 320px;
   min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light {
+  background-color: #ffffff;
+  color: #1c1c1c;
+}
+
+body.dark {
+  background-color: #1c1c1c;
+  color: #f0f0f0;
+}
+
+body.light button.theme-button {
+  background-color: #1a1a1a;
 }
 
 h1 {
@@ -42,16 +59,35 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #646cff;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: border-color 0.25s, background-color 0.3s ease;
+  align-self: flex-end;
 }
+
 button:hover {
   border-color: #646cff;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.theme-header {
+  display: flex;
+  justify-content: start;
+  position: fixed;
+  margin: 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.welcoming-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  text-align: center;
 }
 
 @media (prefers-color-scheme: light) {
